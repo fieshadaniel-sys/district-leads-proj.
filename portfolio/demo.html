@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falls Church Plumbing & Drain | 24/7 Emergency Plumbers</title>
+<meta name="description" content="Falls Church Plumbing & Drain — 24/7 emergency plumbing, drain cleaning, water heaters & leak repair serving Falls Church and Northern Virginia since 2003.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  :root{
+    --forest:#1B3A2D;
+    --forest-dark:#122820;
+    --forest-light:#254a38;
+    --gold:#D4A847;
+    --gold-light:#e8c878;
+    --cream:#F7F3EA;
+    --ink:#152019;
+    --line:rgba(27,58,45,0.12);
+    --shadow:0 20px 50px -20px rgba(18,40,32,0.35);
+    --radius:6px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Lora',serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Archivo Black',sans-serif;
+    font-weight:400;
+    line-height:1.1;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+  /* Ledger numerals — every measured fact on the page (years, minutes, ratings,
+     step counts) shares this one serif-italic mark, the page's signature. */
+  .ledger-num{
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-weight:600;
+    font-variant-numeric:tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  /* ---------- SCROLL REVEAL SYSTEM ----------
+     One base transition, several directional variants. Each section chooses
+     the motion that suits its layout: stats rise, the why-list slides in from
+     its own side, the map clips open, the flag drifts on parallax. */
+  /* Only hide-then-reveal when JS is present to drive it back into view;
+     without JS (or if the script errors) everything stays fully visible. */
+  html:not(.js) .reveal,
+  html:not(.js) .reveal-clip{opacity:1 !important;transform:none !important;clip-path:none !important;}
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1);
+    transition-delay:var(--reveal-delay, 0s);
+    will-change:opacity, transform;
+  }
+  .reveal-left{transform:translateX(-42px);}
+  .reveal-right{transform:translateX(42px);}
+  .reveal-scale{transform:scale(.9);}
+  .reveal-rise{transform:translateY(48px);}
+  .reveal.in-view{opacity:1;transform:none;}
+
+  /* Section eyebrows draw their rule outward as the section arrives */
+  .eyebrow.reveal-rule::before{
+    transform:scaleX(0);
+    transform-origin:left center;
+    transition:transform .7s cubic-bezier(.2,.7,.3,1) .1s;
+  }
+  .eyebrow.reveal-rule.in-view::before{transform:scaleX(1);}
+
+  /* Clip-open reveal for the service-areas map panel */
+  .reveal-clip{
+    clip-path:inset(0 100% 0 0);
+    opacity:1;
+    transition:clip-path .9s cubic-bezier(.2,.7,.3,1);
+  }
+  .reveal-clip.in-view{clip-path:inset(0 0 0 0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rise{
+      opacity:1 !important;transform:none !important;transition:none !important;
+    }
+    .reveal-clip{clip-path:none !important;transition:none !important;}
+    .eyebrow.reveal-rule::before{transform:none !important;transition:none !important;}
+    .flag-motif{transform:none !important;}
+  }
+  .service-grid > .reveal:nth-child(1){--reveal-delay:0s;}
+  .service-grid > .reveal:nth-child(2){--reveal-delay:.09s;}
+  .service-grid > .reveal:nth-child(3){--reveal-delay:.18s;}
+  .service-grid > .reveal:nth-child(4){--reveal-delay:.09s;}
+  .service-grid > .reveal:nth-child(5){--reveal-delay:.18s;}
+  .service-grid > .reveal:nth-child(6){--reveal-delay:.27s;}
+  .review-grid > .reveal:nth-child(1){--reveal-delay:0s;}
+  .review-grid > .reveal:nth-child(2){--reveal-delay:.12s;}
+  .review-grid > .reveal:nth-child(3){--reveal-delay:.24s;}
+  .why-list > .reveal:nth-child(1){--reveal-delay:0s;}
+  .why-list > .reveal:nth-child(2){--reveal-delay:.08s;}
+  .why-list > .reveal:nth-child(3){--reveal-delay:.16s;}
+  .why-list > .reveal:nth-child(4){--reveal-delay:.24s;}
+  .why-list > .reveal:nth-child(5){--reveal-delay:.32s;}
+  .stats-inner > .reveal:nth-child(1){--reveal-delay:0s;}
+  .stats-inner > .reveal:nth-child(2){--reveal-delay:.12s;}
+  .stats-inner > .reveal:nth-child(3){--reveal-delay:.24s;}
+  .area-pills > .reveal{--reveal-delay:calc(var(--pill-i, 0) * .04s);}
+
+  /* ---------- DC FLAG MOTIF ----------
+     Washington's arms — three stars over two bars — recolored to the house
+     palette. It sits as a faint watermark behind two sections and drifts a
+     touch on scroll, a quiet nod to the metro region these trucks cover. */
+  .flag-motif{
+    position:absolute;
+    pointer-events:none;
+    z-index:0;
+    will-change:transform;
+    color:var(--gold);
+  }
+  .flag-motif svg{width:100%;height:100%;display:block;}
+  .flag-why{
+    top:-40px; right:-80px;
+    width:min(46vw, 560px);
+    aspect-ratio:340/300;
+    opacity:.09;
+  }
+  .flag-contact{
+    bottom:-60px; left:-70px;
+    width:min(40vw, 480px);
+    aspect-ratio:340/300;
+    opacity:.08;
+  }
+  .flag-hero{
+    top:8%; right:6%;
+    width:min(34vw, 440px);
+    aspect-ratio:340/300;
+    opacity:.06;
+  }
+  .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .eyebrow{
+    font-family:'Lora',serif;
+    font-weight:700;
+    font-style:italic;
+    color:var(--gold);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:0.82rem;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:2px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:'Archivo Black',sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    padding:16px 28px;
+    border-radius:3px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:var(--gold);
+    color:var(--forest-dark);
+  }
+  .btn-gold:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px -8px rgba(212,168,71,0.55);
+  }
+  .btn-outline{
+    background:transparent;
+    border-color:rgba(247,243,234,0.4);
+    color:var(--cream);
+  }
+  .btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+  .btn-forest{
+    background:var(--forest);
+    color:var(--cream);
+  }
+  .btn-forest:hover{
+    background:var(--forest-dark);
+    transform:translateY(-2px);
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--forest);
+    border-bottom:1px solid rgba(212,168,71,0.25);
+  }
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 24px;
+    max-width:1200px;
+    margin:0 auto;
+    gap:18px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--cream);
+  }
+  .brand-mark{
+    width:40px;height:40px;
+    flex:none;
+  }
+  .brand-text{
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.02rem;
+    line-height:1.15;
+    color:var(--cream);
+  }
+  .brand-text span{
+    display:block;
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:0.72rem;
+    color:var(--gold);
+    letter-spacing:0.04em;
+    margin-top:1px;
+  }
+  nav.primary-links{
+    display:flex;
+    gap:28px;
+  }
+  nav.primary-links a{
+    color:rgba(247,243,234,0.85);
+    font-size:0.92rem;
+    font-weight:600;
+    position:relative;
+    padding:6px 0;
+  }
+  nav.primary-links a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:0;height:2px;
+    background:var(--gold);
+    transition:width .2s ease;
+  }
+  nav.primary-links a:hover::after{width:100%;}
+  .nav-cta{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .nav-phone{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:var(--gold-light);
+    font-family:'Archivo Black',sans-serif;
+    font-size:1rem;
+    white-space:nowrap;
+  }
+  .nav-phone svg{width:18px;height:18px;flex:none;}
+  .burger{
+    display:none;
+    background:none;border:none;
+    color:var(--cream);
+    width:38px;height:38px;
+    cursor:pointer;
+  }
+  .mobile-panel{
+    display:none;
+    background:var(--forest-dark);
+    padding:10px 24px 24px;
+  }
+  .mobile-panel a{
+    display:block;
+    padding:12px 0;
+    color:var(--cream);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    font-weight:600;
+  }
+  .mobile-panel.open{display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--forest);
+    color:var(--cream);
+    overflow:hidden;
+    padding:96px 0 120px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(600px 400px at 88% 10%, rgba(212,168,71,0.16), transparent 60%),
+      radial-gradient(500px 500px at -5% 90%, rgba(212,168,71,0.09), transparent 65%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:50px;
+    align-items:center;
+  }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(212,168,71,0.12);
+    border:1px solid rgba(212,168,71,0.5);
+    color:var(--gold-light);
+    padding:9px 16px;
+    border-radius:40px;
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    margin-bottom:26px;
+  }
+  .hero-badge .dot{
+    width:8px;height:8px;
+    border-radius:50%;
+    background:#5CD879;
+    box-shadow:0 0 0 4px rgba(92,216,121,0.2);
+    animation:pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.45;}
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.8rem);
+    color:var(--cream);
+    margin-bottom:22px;
+    text-wrap:balance;
+  }
+  .hero h1 .hl{
+    color:var(--gold);
+    position:relative;
+  }
+  .hero p.lead{
+    font-size:1.15rem;
+    color:rgba(247,243,234,0.82);
+    max-width:520px;
+    margin-bottom:34px;
+    font-style:italic;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:44px;
+  }
+  .hero-micro{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .hero-micro div{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.88rem;
+    color:rgba(247,243,234,0.75);
+  }
+  .hero-micro svg{width:20px;height:20px;color:var(--gold);flex:none;}
+
+  /* hero art: pipe + drop illustration, pure CSS/SVG, no photos */
+  .hero-art{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-art svg{
+    width:100%;
+    max-width:420px;
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,0.35));
+  }
+
+  .hero-divider{
+    display:block;
+    width:100%;
+    height:70px;
+    margin-top:-70px;
+    position:relative;
+    z-index:3;
+  }
+
+  /* ---------- STATS ---------- */
+  /* A ledger, not a billboard: hairline-bordered cells on the page's quiet
+     ground, each fact set as an oversized serif numeral — read left to right
+     like line items, the way a service invoice lists what was done. */
+  .stats{
+    background:var(--cream);
+    padding:0;
+    position:relative;
+    z-index:4;
+    border-bottom:1px solid var(--line);
+  }
+  .stats-inner{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    max-width:1200px;
+    margin:0 auto;
+    border-left:1px solid var(--line);
+  }
+  .stat{
+    padding:52px 32px 40px;
+    text-align:left;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .stat-num{
+    color:var(--forest-dark);
+    font-size:clamp(3rem,6vw,4.4rem);
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    line-height:1;
+  }
+  .stat-num .unit{font-size:0.36em;font-style:normal;color:var(--gold);}
+  .stat-num svg{width:0.62em;height:0.62em;margin-left:2px;}
+  .stat-label{
+    color:#57645a;
+    font-size:0.82rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    margin-top:14px;
+    font-weight:600;
+    max-width:16ch;
+  }
+  .stat-index{
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:22px;
+    display:block;
+  }
+
+  /* ---------- SECTION shared ---------- */
+  section{padding:100px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{
+    font-size:clamp(1.8rem,3.4vw,2.6rem);
+    color:var(--forest-dark);
+  }
+  .section-head p{
+    margin-top:16px;
+    color:#4b5a51;
+    font-size:1.05rem;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--cream);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:#fff;
+    padding:40px 32px;
+    position:relative;
+    transition:background .2s ease;
+  }
+  .service-card:hover{background:#FBF8F1;}
+  .service-card:hover .service-icon{
+    background:var(--forest);
+    transform:rotate(-6deg);
+  }
+  .service-card:hover .service-icon svg{stroke:var(--gold);}
+  .service-icon{
+    width:64px;height:64px;
+    border-radius:14px;
+    background:var(--forest-dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    transition:transform .25s ease, background .25s ease;
+  }
+  .service-icon svg{width:30px;height:30px;stroke:var(--gold-light);transition:stroke .25s ease;}
+  .service-card h3{
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.12rem;
+    color:var(--forest-dark);
+    margin-bottom:12px;
+    letter-spacing:-0.01em;
+  }
+  .service-card p{
+    color:#576358;
+    font-size:0.97rem;
+    margin-bottom:18px;
+  }
+  .service-card .learn{
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--forest);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .service-card .learn svg{width:14px;height:14px;transition:transform .2s ease;}
+  .service-card:hover .learn svg{transform:translateX(4px);}
+  .service-index{
+    position:absolute;
+    top:24px;right:28px;
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.4rem;
+    color:rgba(27,58,45,0.09);
+  }
+
+  /* ---------- WHY US ---------- */
+  .why{
+    background:var(--forest);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .why::after{
+    content:"";
+    position:absolute;
+    right:-120px; top:-120px;
+    width:420px;height:420px;
+    border:1px solid rgba(212,168,71,0.15);
+    border-radius:50%;
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+    align-items:start;
+    position:relative;
+    z-index:2;
+  }
+  .why .section-head p{color:rgba(247,243,234,0.78);}
+  .why .section-head h2{color:var(--cream);}
+  .why-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .why-item{
+    display:flex;
+    gap:22px;
+    padding:26px 0;
+    border-bottom:1px solid rgba(212,168,71,0.18);
+  }
+  .why-item:first-child{padding-top:0;}
+  .why-num{
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.3rem;
+    color:var(--gold);
+    opacity:0.85;
+    flex:none;
+    width:60px;
+  }
+  .why-item h4{
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.05rem;
+    color:var(--gold-light);
+    margin-bottom:8px;
+  }
+  .why-item p{
+    color:rgba(247,243,234,0.75);
+    font-size:0.96rem;
+    margin:0;
+  }
+  .why-badge{
+    background:rgba(212,168,71,0.08);
+    border:1px solid rgba(212,168,71,0.35);
+    border-radius:12px;
+    padding:36px;
+  }
+  .why-badge .quote-mark{
+    font-family:'Archivo Black',sans-serif;
+    font-size:4rem;
+    color:var(--gold);
+    line-height:0.6;
+    display:block;
+    margin-bottom:14px;
+  }
+  .why-badge p{
+    font-style:italic;
+    color:rgba(247,243,234,0.9);
+    font-size:1.15rem;
+    margin-bottom:22px;
+  }
+  .why-badge .who{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .avatar-mono{
+    width:46px;height:46px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--forest-dark);
+    font-family:'Archivo Black',sans-serif;
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.95rem;
+    flex:none;
+  }
+  .who .name{font-weight:700;color:var(--cream);font-family:'Lora',serif;}
+  .who .role{font-size:0.82rem;color:var(--gold-light);}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--cream);}
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .review-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:34px 30px;
+    position:relative;
+    box-shadow:var(--shadow);
+  }
+  .review-card .stars{
+    display:flex;
+    gap:4px;
+    margin-bottom:18px;
+  }
+  .review-card .stars svg{width:18px;height:18px;fill:var(--gold);}
+  .review-card p.body{
+    color:#3c463f;
+    font-size:1rem;
+    margin-bottom:26px;
+    min-height:110px;
+  }
+  .review-foot{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .review-foot .name{font-weight:700;font-size:0.95rem;color:var(--forest-dark);}
+  .review-foot .loc{font-size:0.8rem;color:#7a877e;}
+
+  /* ---------- SERVICE AREAS ---------- */
+  .areas{
+    background:#fff;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .areas-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .areas-visual{
+    background:var(--forest-dark);
+    border-radius:14px;
+    padding:38px;
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .areas-visual svg{width:100%;max-width:280px;margin:0 auto 20px;}
+  .areas-visual .center-tag{
+    text-align:center;
+  }
+  .areas-visual .center-tag strong{
+    display:block;
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.4rem;
+    color:var(--gold);
+  }
+  .areas-visual .center-tag span{
+    font-size:0.85rem;
+    color:rgba(247,243,234,0.7);
+  }
+  .area-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .area-pills a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border:1.5px solid var(--forest);
+    border-radius:40px;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--forest-dark);
+    transition:all .18s ease;
+  }
+  .area-pills a:hover{
+    background:var(--forest);
+    color:var(--cream);
+  }
+  .area-pills a svg{width:14px;height:14px;flex:none;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--forest);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+    position:relative;
+    z-index:2;
+  }
+  .contact-info .section-head h2{color:var(--cream);}
+  .contact-info .section-head p{color:rgba(247,243,234,0.78);}
+  .info-row{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:18px 0;
+    border-bottom:1px solid rgba(212,168,71,0.18);
+  }
+  .info-row:first-of-type{border-top:1px solid rgba(212,168,71,0.18);}
+  .info-row svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px;}
+  .info-row .label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--gold-light);font-weight:700;}
+  .info-row .value{color:rgba(247,243,234,0.9);margin-top:3px;font-size:1rem;}
+
+  form.quote-form{
+    background:#fff;
+    border-radius:14px;
+    padding:40px;
+    color:var(--ink);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);
+  }
+  form.quote-form h3{
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.3rem;
+    color:var(--forest-dark);
+    margin-bottom:6px;
+  }
+  form.quote-form > p{
+    color:#66756c;
+    font-size:0.92rem;
+    margin-bottom:26px;
+  }
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:18px;
+  }
+  .field{display:flex;flex-direction:column;gap:7px;}
+  .field.full{grid-column:1/-1;}
+  .field label{
+    font-size:0.8rem;
+    font-weight:700;
+    color:var(--forest-dark);
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    font-family:'Lora',serif;
+    font-size:0.98rem;
+    padding:13px 14px;
+    border:1.5px solid #dfe3df;
+    border-radius:6px;
+    background:#FBFAF6;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .18s ease, box-shadow .18s ease;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 4px rgba(212,168,71,0.18);
+  }
+  .field textarea{resize:vertical;min-height:100px;}
+  form.quote-form .btn{width:100%;margin-top:6px;}
+  .form-note{
+    font-size:0.78rem;
+    color:#8b968e;
+    margin-top:14px;
+    text-align:center;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--forest-dark);
+    color:rgba(247,243,234,0.75);
+    padding:70px 0 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 0.9fr 0.9fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+    border-bottom:1px solid rgba(212,168,71,0.15);
+  }
+  .footer-brand .brand{margin-bottom:16px;}
+  .footer-brand p{font-size:0.92rem;max-width:280px;}
+  .footer-social{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+  }
+  .footer-social a{
+    width:36px;height:36px;
+    border:1px solid rgba(212,168,71,0.35);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .18s ease;
+  }
+  .footer-social a:hover{background:var(--gold);color:var(--forest-dark);}
+  .footer-social svg{width:16px;height:16px;}
+  .footer-col h5{
+    font-family:'Archivo Black',sans-serif;
+    font-size:0.85rem;
+    color:var(--gold-light);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin-bottom:18px;
+  }
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .footer-col a{font-size:0.92rem;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:26px 0;
+    font-size:0.82rem;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .footer-bottom a{color:var(--gold-light);}
+
+  /* floating call button */
+  .float-call{
+    position:fixed;
+    right:20px;bottom:20px;
+    z-index:900;
+    background:var(--gold);
+    color:var(--forest-dark);
+    width:60px;height:60px;
+    border-radius:50%;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 12px 28px -6px rgba(212,168,71,0.6);
+  }
+  .float-call svg{width:26px;height:26px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    nav.primary-links{display:none;}
+    .burger{display:flex;align-items:center;justify-content:center;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:280px;margin:0 auto 20px;}
+    .why-grid, .areas-grid, .contact-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .review-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .stats-inner{grid-template-columns:1fr;border-right:1px solid var(--line);}
+    .stat{border-right:none;border-bottom:1px solid var(--line);}
+    .stat:last-child{border-bottom:none;}
+  }
+  @media (max-width:640px){
+    section{padding:64px 0;}
+    .service-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:34px;}
+    .hero{padding:70px 0 90px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .nav-phone span.phone-text{display:none;}
+    .float-call{display:flex;}
+    .footer-bottom{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="23" stroke="#D4A847" stroke-width="1.5"/>
+        <path d="M15 30V21C15 18.7909 16.7909 17 19 17H22" stroke="#D4A847" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M33 18V27C33 29.2091 31.2091 31 29 31H26" stroke="#F7F3EA" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="19" cy="31" r="2.6" fill="#D4A847"/>
+        <circle cx="29" cy="17" r="2.6" fill="#F7F3EA"/>
+      </svg>
+      <span class="brand-text">FALLS CHURCH<span>Plumbing &amp; Drain Co.</span></span>
+    </a>
+
+    <nav class="primary-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+17035550198" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="phone-text">(703) 555-0198</span>
+      </a>
+      <a href="#contact" class="btn btn-gold" style="padding:12px 20px;">Get Free Quote</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#areas">Service Areas</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+17035550198">Call (703) 555-0198</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div id="top"></div>
+<section class="hero">
+  <div class="flag-motif flag-hero" aria-hidden="true" data-parallax="0.08">
+    <svg viewBox="0 0 340 300" fill="currentColor">
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(55,25) scale(0.6)"/>
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(140,25) scale(0.6)"/>
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(225,25) scale(0.6)"/>
+      <rect x="25" y="140" width="290" height="30" rx="4"/>
+      <rect x="25" y="195" width="290" height="30" rx="4"/>
+    </svg>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Live dispatch &mdash; trucks on the road now</div>
+      <h1>Burst pipe at 2&nbsp;a.m.? <span class="hl">We're already&nbsp;on&nbsp;our&nbsp;way.</span></h1>
+      <p class="lead">Falls Church's own 24/7 emergency plumbers. Flat-rate pricing, master-licensed technicians, and a truck at your door in 45 minutes or less &mdash; day or night.</p>
+      <div class="hero-actions">
+        <a href="tel:+17035550198" class="btn btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (703) 555-0198
+        </a>
+        <a href="#contact" class="btn btn-outline">Schedule Online</a>
+      </div>
+      <div class="hero-micro">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Licensed &amp; insured master plumbers</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.6 6.9L22 9.3l-5.5 4.7L18.2 22 12 17.8 5.8 22l1.7-8-5.5-4.7 7.4-1.4z"/></svg> Upfront flat-rate quotes</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open 24/7, 365 days</div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <svg viewBox="0 0 400 420" fill="none">
+        <!-- backdrop ring -->
+        <circle cx="200" cy="210" r="170" fill="rgba(212,168,71,0.07)"/>
+        <circle cx="200" cy="210" r="170" stroke="rgba(212,168,71,0.3)" stroke-width="1" stroke-dasharray="2 8"/>
+        <!-- pipe frame -->
+        <path d="M70 150h90a30 30 0 0 1 30 30v40a30 30 0 0 0 30 30h110" stroke="#D4A847" stroke-width="10" stroke-linecap="round"/>
+        <path d="M70 150h90a30 30 0 0 1 30 30v40a30 30 0 0 0 30 30h110" stroke="#0e2419" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.5 14"/>
+        <!-- flanges -->
+        <rect x="55" y="136" width="30" height="28" rx="4" fill="#F7F3EA"/>
+        <rect x="315" y="236" width="30" height="28" rx="4" fill="#F7F3EA"/>
+        <!-- wrench -->
+        <g transform="translate(150,270) rotate(-18)">
+          <rect x="0" y="0" width="130" height="20" rx="10" fill="#F7F3EA"/>
+          <path d="M0 10a20 20 0 1 1 0 0.1z" fill="none" stroke="#F7F3EA" stroke-width="10"/>
+          <circle cx="130" cy="10" r="16" fill="none" stroke="#F7F3EA" stroke-width="10"/>
+        </g>
+        <!-- big water drop -->
+        <g transform="translate(250,70)">
+          <path d="M40 0C40 0 78 46 78 74a38 38 0 1 1-76 0C2 46 40 0 40 0Z" fill="#D4A847"/>
+          <path d="M22 74a18 18 0 0 0 18 18" stroke="#F7F3EA" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+        </g>
+        <!-- small drips -->
+        <circle cx="160" cy="120" r="6" fill="#D4A847" opacity="0.6"/>
+        <circle cx="330" cy="330" r="9" fill="#D4A847" opacity="0.5"/>
+        <circle cx="90" cy="330" r="5" fill="#F7F3EA" opacity="0.4"/>
+      </svg>
+    </div>
+  </div>
+
+  <svg class="hero-divider" viewBox="0 0 1200 70" preserveAspectRatio="none">
+    <path d="M0 0 L1200 0 L1200 40 L0 70 Z" fill="#F7F3EA"/>
+  </svg>
+</section>
+
+<!-- ================= STATS ================= -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <span class="stat-index">On the job since 2003</span>
+      <div class="stat-num ledger-num"><span class="stat-count" data-target="20" data-suffix="+">20</span><span class="unit">yrs</span></div>
+      <div class="stat-label">Years serving Falls Church</div>
+    </div>
+    <div class="stat reveal" style="--reveal-delay:.12s;">
+      <span class="stat-index">Trucks pre-staged nearby</span>
+      <div class="stat-num ledger-num"><span class="stat-count" data-target="45">45</span><span class="unit">min</span></div>
+      <div class="stat-label">Average emergency response</div>
+    </div>
+    <div class="stat reveal" style="--reveal-delay:.24s;">
+      <span class="stat-index">900+ verified reviews</span>
+      <div class="stat-num ledger-num"><span class="stat-count" data-target="4.9" data-decimals="1">4.9</span>
+        <svg viewBox="0 0 24 24" fill="#D4A847"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+      </div>
+      <div class="stat-label">Rating on Google &amp; Angi</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">What We Fix</div>
+      <h2>Six ways we keep Falls Church running dry</h2>
+      <p>From a 2 a.m. burst pipe to a bathroom remodel, our trucks carry the parts to finish most jobs in a single visit.</p>
+    </div>
+
+    <div class="service-grid">
+      <!-- 1 -->
+      <div class="service-card">
+        <span class="service-index">01</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11z"/></svg>
+        </div>
+        <h3>Emergency Plumbing Repair</h3>
+        <p>Burst pipes, overflowing toilets, gas smells &mdash; a fully-stocked truck reaches you in 45 minutes, any hour.</p>
+        <span class="learn">Call now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+      <!-- 2 -->
+      <div class="service-card">
+        <span class="service-index">02</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg>
+        </div>
+        <h3>Drain Cleaning &amp; Rooter</h3>
+        <p>Camera-guided drain snaking and hydro-jetting clears roots and grease clogs for good, not just today.</p>
+        <span class="learn">See pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+      <!-- 3 -->
+      <div class="service-card">
+        <span class="service-index">03</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3>Water Heater Repair &amp; Install</h3>
+        <p>Tank and tankless service, same-day replacement units in stock for most Northern Virginia homes.</p>
+        <span class="learn">Compare units <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+      <!-- 4 -->
+      <div class="service-card">
+        <span class="service-index">04</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3>Leak Detection &amp; Repair</h3>
+        <p>Acoustic and thermal leak detection finds hidden slab and wall leaks without tearing up your home.</p>
+        <span class="learn">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+      <!-- 5 -->
+      <div class="service-card">
+        <span class="service-index">05</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h6l2-3 2 6 2-3h6"/></svg>
+        </div>
+        <h3>Sewer Line Repair &amp; Replace</h3>
+        <p>Trenchless pipe bursting and lining options mean less digging, less yard damage, faster turnaround.</p>
+        <span class="learn">Get a scope <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+      <!-- 6 -->
+      <div class="service-card">
+        <span class="service-index">06</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3v6M17 3v6M12 9v12M4 9h16"/></svg>
+        </div>
+        <h3>Fixture Installation</h3>
+        <p>Faucets, toilets, garbage disposals and sinks installed clean, level, and leak-tested before we leave.</p>
+        <span class="learn">Book install <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section id="why" class="why">
+  <div class="flag-motif flag-why" aria-hidden="true" data-parallax="0.05">
+    <svg viewBox="0 0 340 300" fill="currentColor">
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(55,25) scale(0.6)"/>
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(140,25) scale(0.6)"/>
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(225,25) scale(0.6)"/>
+      <rect x="25" y="140" width="290" height="30" rx="4"/>
+      <rect x="25" y="195" width="290" height="30" rx="4"/>
+    </svg>
+  </div>
+  <div class="container why-grid">
+    <div>
+      <div class="section-head">
+        <div class="eyebrow reveal-rule">Why Falls Church Trusts Us</div>
+        <h2>We built this company to fix the plumber problem, not add to it</h2>
+        <p>No overtime charges, no bait-and-switch quotes, no strangers &mdash; every technician is a background-checked employee, never a subcontractor.</p>
+      </div>
+      <div class="why-badge">
+        <span class="quote-mark">&rdquo;</span>
+        <p>They quoted a flat price on the phone and that's exactly what I paid &mdash; even after the job ran long.</p>
+        <div class="who">
+          <div class="avatar-mono">RH</div>
+          <div>
+            <div class="name">Rebecca H.</div>
+            <div class="role">Falls Church, VA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div>
+          <h4>Family-owned since 2003</h4>
+          <p>Started by a single Falls Church plumber with one van &mdash; now a full crew still answering our own phones locally.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div>
+          <h4>Flat-rate, upfront pricing</h4>
+          <p>You approve the exact price before any tool touches your pipes. No hourly clock, no surprise line items.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div>
+          <h4>45-minute emergency response</h4>
+          <p>Trucks are pre-staged across Northern Virginia so a call at 3 a.m. gets the same speed as one at 3 p.m.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div>
+          <h4>2-year workmanship warranty</h4>
+          <p>If the same issue returns within two years of a repair, we come back and make it right at no charge.</p>
+        </div>
+      </div>
+      <div class="why-item" style="border-bottom:none;">
+        <div class="why-num">05</div>
+        <div>
+          <h4>Boots off, mats down, cleaned up</h4>
+          <p>We treat every home like it's the last stop before an inspection &mdash; because for us, reputation is the whole business.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" class="reviews">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">Neighbors, Not Strangers</div>
+      <h2>What Falls Church is saying</h2>
+      <p>900+ verified reviews across Google and Angi average 4.9 out of 5 stars.</p>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+        </div>
+        <p class="body">"Our pipe burst under the kitchen sink at 11pm on a Sunday. They picked up on the second ring and had someone at our door in under 40 minutes. Fixed, cleaned up, gone by midnight."</p>
+        <div class="review-foot">
+          <div class="avatar-mono" style="background:var(--forest-dark);color:var(--gold);">SM</div>
+          <div>
+            <div class="name">Sarah M.</div>
+            <div class="loc">Falls Church, VA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+        </div>
+        <p class="body">"Got three quotes for a water heater replacement and theirs was the clearest and fairest. The tech explained tank vs. tankless without any upselling pressure. Installed same day."</p>
+        <div class="review-foot">
+          <div class="avatar-mono" style="background:var(--forest-dark);color:var(--gold);">JT</div>
+          <div>
+            <div class="name">James T.</div>
+            <div class="loc">Arlington, VA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5-4.8-4.6 6.6-.9z"/></svg>
+        </div>
+        <p class="body">"Recurring drain backup we'd fought for years. They ran a camera, showed us the root intrusion on screen, and hydro-jetted it clear. Two years later, still no issues."</p>
+        <div class="review-foot">
+          <div class="avatar-mono" style="background:var(--forest-dark);color:var(--gold);">LK</div>
+          <div>
+            <div class="name">Linda K.</div>
+            <div class="loc">Vienna, VA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE AREAS ================= -->
+<section id="areas" class="areas">
+  <div class="container areas-grid">
+    <div class="areas-visual">
+      <svg viewBox="0 0 260 200" fill="none">
+        <circle cx="130" cy="100" r="6" fill="#D4A847"/>
+        <circle cx="130" cy="100" r="30" stroke="#D4A847" stroke-width="1" stroke-dasharray="3 5"/>
+        <circle cx="130" cy="100" r="60" stroke="#D4A847" stroke-width="1" stroke-dasharray="3 5" opacity="0.6"/>
+        <circle cx="130" cy="100" r="90" stroke="#D4A847" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <circle cx="70" cy="60" r="3.5" fill="#F7F3EA"/>
+        <circle cx="190" cy="55" r="3.5" fill="#F7F3EA"/>
+        <circle cx="60" cy="140" r="3.5" fill="#F7F3EA"/>
+        <circle cx="200" cy="150" r="3.5" fill="#F7F3EA"/>
+        <circle cx="150" cy="30" r="3.5" fill="#F7F3EA"/>
+        <circle cx="40" cy="100" r="3.5" fill="#F7F3EA"/>
+        <circle cx="220" cy="100" r="3.5" fill="#F7F3EA"/>
+      </svg>
+      <div class="center-tag">
+        <strong>15+ Communities</strong>
+        <span>Falls Church &amp; Greater Northern Virginia</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-head">
+        <div class="eyebrow">Where We Work</div>
+        <h2>Rooted in Falls Church, ready across Northern Virginia</h2>
+        <p>Same-day and emergency service throughout the following communities:</p>
+      </div>
+      <div class="area-pills">
+        <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Falls Church</a>
+        <a href="#contact">Arlington</a>
+        <a href="#contact">Vienna</a>
+        <a href="#contact">McLean</a>
+        <a href="#contact">Fairfax</a>
+        <a href="#contact">Annandale</a>
+        <a href="#contact">Tysons</a>
+        <a href="#contact">Merrifield</a>
+        <a href="#contact">Alexandria</a>
+        <a href="#contact">Oakton</a>
+        <a href="#contact">Springfield</a>
+        <a href="#contact">Reston</a>
+        <a href="#contact">Great Falls</a>
+        <a href="#contact">Herndon</a>
+        <a href="#contact">Falls Church City</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="flag-motif flag-contact" aria-hidden="true" data-parallax="-0.04">
+    <svg viewBox="0 0 340 300" fill="currentColor">
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(55,25) scale(0.6)"/>
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(140,25) scale(0.6)"/>
+      <path d="M50 5 61.8 38.2 97.6 38.2 68.9 59.5 79.4 92.7 50 71.5 20.6 92.7 31.1 59.5 2.4 38.2 38.2 38.2Z" transform="translate(225,25) scale(0.6)"/>
+      <rect x="25" y="140" width="290" height="30" rx="4"/>
+      <rect x="25" y="195" width="290" height="30" rx="4"/>
+    </svg>
+  </div>
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="section-head">
+        <div class="eyebrow reveal-rule">Get In Touch</div>
+        <h2>Tell us what's leaking. We'll handle the rest.</h2>
+        <p>For active emergencies, call us directly &mdash; it's faster than the form and gets you straight to dispatch.</p>
+      </div>
+
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          <div class="label">24/7 Emergency Line</div>
+          <div class="value"><a href="tel:+17035550198">(703) 555-0198</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 8l9 6 9-6M3 6h18v12H3z"/></svg>
+        <div>
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:service@fallschurchplumbing.example">service@fallschurchplumbing.example</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div>
+          <div class="label">Shop Address</div>
+          <div class="value">301 Broad St, Falls Church, VA 22046</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div>
+          <div class="label">Hours</div>
+          <div class="value">Emergency dispatch 24/7 &middot; Office Mon&ndash;Sat 7am&ndash;7pm</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="quote-form" id="quoteForm">
+      <h3>Request a Free Quote</h3>
+      <p>Fill this out and our office will call you back within 15 minutes during business hours.</p>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="fname">Full Name</label>
+          <input id="fname" name="fname" type="text" placeholder="Jane Doe" required>
+        </div>
+        <div class="field">
+          <label for="fphone">Phone</label>
+          <input id="fphone" name="fphone" type="tel" placeholder="(703) 555-0100" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="femail">Email</label>
+          <input id="femail" name="femail" type="email" placeholder="jane@email.com">
+        </div>
+        <div class="field">
+          <label for="fservice">Service Needed</label>
+          <select id="fservice" name="fservice" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Emergency Plumbing Repair</option>
+            <option>Drain Cleaning &amp; Rooter</option>
+            <option>Water Heater Repair/Install</option>
+            <option>Leak Detection &amp; Repair</option>
+            <option>Sewer Line Repair</option>
+            <option>Fixture Installation</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field full">
+          <label for="fmessage">Tell us what's going on</label>
+          <textarea id="fmessage" name="fmessage" placeholder="e.g. Kitchen sink draining slowly for the past week..."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-forest">Request My Free Quote</button>
+      <p class="form-note">By submitting, you agree to be contacted about your service request. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="23" stroke="#D4A847" stroke-width="1.5"/>
+          <path d="M15 30V21C15 18.7909 16.7909 17 19 17H22" stroke="#D4A847" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M33 18V27C33 29.2091 31.2091 31 29 31H26" stroke="#F7F3EA" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="19" cy="31" r="2.6" fill="#D4A847"/>
+          <circle cx="29" cy="17" r="2.6" fill="#F7F3EA"/>
+        </svg>
+        <span class="brand-text">FALLS CHURCH<span>Plumbing &amp; Drain Co.</span></span>
+      </a>
+      <p>Locally owned, family-operated plumbing company serving Falls Church and Northern Virginia since 2003. Licensed, bonded, and insured.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Google"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Emergency Repair</a></li>
+        <li><a href="#services">Drain Cleaning</a></li>
+        <li><a href="#services">Water Heaters</a></li>
+        <li><a href="#services">Leak Detection</a></li>
+        <li><a href="#services">Sewer Lines</a></li>
+        <li><a href="#services">Fixture Install</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#areas">Service Areas</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#top">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+17035550198">(703) 555-0198</a></li>
+        <li><a href="mailto:service@fallschurchplumbing.example">service@fallschurchplumbing.example</a></li>
+        <li>301 Broad St<br>Falls Church, VA 22046</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> Falls Church Plumbing &amp; Drain Co. All rights reserved.</span>
+    <span>VA Class A Contractor Lic. #2705-XXXXXX &nbsp;&middot;&nbsp; <a href="#top">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<a href="tel:+17035550198" class="float-call" aria-label="Call now">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const burger = document.getElementById('burgerBtn');
+  const panel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', () => panel.classList.toggle('open'));
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = 'Request Sent — We\'ll Call You Shortly';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = original; btn.disabled = false; this.reset(); }, 3500);
+  });
+
+  try {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Assign each section the motion that suits its layout. [selector, variant] */
+  const revealGroups = [
+    ['.services .section-head', ''],
+    ['.reviews .section-head', ''],
+    ['.why .section-head', 'reveal-left'],
+    ['.contact .section-head', 'reveal-left'],
+    ['.areas .section-head', 'reveal-right'],
+    ['.service-grid > .service-card', 'reveal-rise'],
+    ['.review-grid > .review-card', 'reveal-rise'],
+    ['.stats-inner > .stat', ''],
+    ['.why-list > .why-item', 'reveal-right'],
+    ['.why-badge', 'reveal-left'],
+    ['.areas-visual', 'reveal-clip'],
+    ['.contact-info .info-row', 'reveal-left'],
+    ['form.quote-form', 'reveal-right'],
+  ];
+  revealGroups.forEach(([sel, variant]) => {
+    document.querySelectorAll(sel).forEach(el => {
+      /* clip is a standalone motion; every other variant layers on .reveal */
+      if (variant === 'reveal-clip') { el.classList.add('reveal-clip'); return; }
+      el.classList.add('reveal');
+      if (variant) el.classList.add(variant);
+    });
+  });
+
+  /* Eyebrow rules draw as their section arrives */
+  document.querySelectorAll('.eyebrow').forEach(el => el.classList.add('reveal-rule'));
+
+  /* Service-area chips cascade in, each a beat behind the last */
+  document.querySelectorAll('.area-pills a').forEach((a, i) => {
+    a.classList.add('reveal');
+    a.style.setProperty('--pill-i', i);
+  });
+
+  /* Count-up: numbers tick to their target the first time they're seen */
+  function countUp(el) {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1100;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(decimals) + (p === 1 ? suffix : '');
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const allReveals = document.querySelectorAll('.reveal, .reveal-rule, .reveal-clip');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    allReveals.forEach(el => el.classList.add('in-view'));
+    document.querySelectorAll('.stat-count').forEach(el => {
+      el.textContent = parseFloat(el.dataset.target).toFixed(parseInt(el.dataset.decimals || '0', 10)) + (el.dataset.suffix || '');
+    });
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          entry.target.querySelectorAll?.('.stat-count').forEach(countUp);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    allReveals.forEach(el => io.observe(el));
+  }
+
+  /* Flag watermarks drift gently against the scroll for depth */
+  const flags = Array.from(document.querySelectorAll('.flag-motif[data-parallax]'));
+  if (flags.length && !reduceMotion) {
+    let ticking = false;
+    const updateFlags = () => {
+      const vh = window.innerHeight;
+      flags.forEach(flag => {
+        const rect = flag.getBoundingClientRect();
+        if (rect.bottom < -200 || rect.top > vh + 200) return;
+        const rate = parseFloat(flag.dataset.parallax) || 0;
+        const offset = (rect.top + rect.height / 2 - vh / 2);
+        flag.style.transform = 'translate3d(0,' + (-offset * rate).toFixed(1) + 'px,0)';
+      });
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(updateFlags); ticking = true; }
+    }, { passive: true });
+    updateFlags();
+  }
+  } catch (err) {
+    /* Never leave content hidden if the reveal setup fails */
+    document.querySelectorAll('.reveal, .reveal-clip').forEach(el => el.classList.add('in-view'));
+    document.querySelectorAll('.stat-count').forEach(el => {
+      el.textContent = parseFloat(el.dataset.target).toFixed(parseInt(el.dataset.decimals || '0', 10)) + (el.dataset.suffix || '');
+    });
+  }
+</script>
+
+</body>
+</html>
